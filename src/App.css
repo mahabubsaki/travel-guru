@@ -13,3 +13,17 @@
   min-height: 100vh;
   padding-top: 60px;
 }
+@media only screen and (max-width: 768px) {
+  .info,
+  .img {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .info {
+    width: 40%;
+  }
+  .img {
+    width: 60%;
+  }
+}
