@@ -4,7 +4,6 @@ import Navbar from '../portion/Navbar';
 const Home = () => {
     return (
         <div className="home">
-            <Navbar></Navbar>
         </div>
     );
 };

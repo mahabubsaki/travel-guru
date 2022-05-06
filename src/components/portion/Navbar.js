@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CustomLink from '../utilities/CustomLink';
 
 const Navbar = () => {
+    const navigate = useNavigate()
     const handleSearch = (e) => {
         e.preventDefault();
-        e.target.reset()
+        e.target.reset();
+        //disabling form default behavior and reseting the input
     }
     return (
         <nav className="navbar navbar-expand-md navbar-light bg-light">
@@ -35,10 +37,10 @@ const Navbar = () => {
                             <CustomLink to="/contact" className="nav-link">Contact</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <button className="btn btn-warning p-2">Login</button>
+                            <button className="btn btn-warning p-2" onClick={() => navigate('/login')}>Login</button>
                         </li>
                         <li className="nav-item">
-                            <button className="btn btn-info p-2 ms-0 ms-md-2 mt-2 mt-md-0">Register</button>
+                            <button className="btn btn-info p-2 ms-0 ms-md-2 mt-2 mt-md-0" onClick={() => navigate('/register')}>Register</button>
                         </li>
                     </ul>
                 </div>
