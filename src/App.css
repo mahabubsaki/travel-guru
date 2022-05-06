@@ -27,3 +27,13 @@
     width: 60%;
   }
 }
+.book-label {
+  color: gray;
+  font-size: 18px;
+}
+.book-input {
+  border: none;
+  padding: 10px;
+  background-color: rgb(215, 219, 223);
+  border-radius: 5px;
+}

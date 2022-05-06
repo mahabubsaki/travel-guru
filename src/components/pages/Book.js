@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import NotFound from './NotFound';
 
 const Book = () => {
     const { id } = useParams()
-    console.log(id);
+    const [place, setPlace] = useState({})
     const destination = [{
         id: '1',
         name: "COX'S BAZAR",
@@ -25,8 +26,47 @@ const Book = () => {
         description: "Sajek Tripuri Valley is one of the most popular tourist spots in Bangladesh situated among the hills of the Kasalong range of mountains in Sajek union, Baghaichhari Upazila in Rangamati District.The valley is 2,000 feet above sea level.Sajek Tripuri Valley is known as the Queen of Hills & Roof of Rangamati.Sajek is a union located in the north of Chittagong Hill Tracts. It's under Baghaichori Upazila in Rangamati hill district.",
         img: "https://i.ibb.co/5hf8LYs/Sajek.png"
     }]
+    useEffect(() => {
+        if (id) {
+            setPlace(destination.find(i => i.id === id))
+        }
+    }, [id])
+    const { name, description } = place
+    const handleBooking = (e) => {
+        e.preventDefault()
+    }
+    if (!place) {
+        return <NotFound></NotFound>
+    }
     return (
         <div className="home">
+            <div className="d-flex flex-column flex-md-row align-items-center container" style={{ minHeight: "90vh" }}>
+                <div className="w-100 w-md-50 text-white">
+                    <h1 style={{ fontSize: "32px", fontWeight: "bold" }}>{name}</h1>
+                    <p>{description}</p>
+                </div>
+                <div className="w-100 w-md-50">
+                    <div className="w-75 bg-light p-4 mx-auto rounded-3">
+                        <form onSubmit={handleBooking}>
+                            <label htmlFor="origin" className="mb-1 book-label">Origin</label>
+                            <input type="text" name="" id="origin" className="w-100 book-input" />
+                            <label htmlFor="origin" className="mb-1 book-label">Destination</label>
+                            <input type="text" name="destination" id="origin" className="w-100 book-input" value={name ? name : ""} readOnly={true} disabled />
+                            <div className="d-flex my-2">
+                                <div className='w-50 me-2'>
+                                    <label htmlFor="for" className="book-label">For</label>
+                                    <input type="date" name="" id="from" className="w-100 book-input" />
+                                </div>
+                                <div className='w-50 ms-2'>
+                                    <label htmlFor="to" className="book-label">To</label>
+                                    <input type="date" name="" id="to" className="w-100 book-input" />
+                                </div>
+                            </div>
+                            <button className="w-100 mt-2 btn btn-warning" type="submit">Start Booking</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
