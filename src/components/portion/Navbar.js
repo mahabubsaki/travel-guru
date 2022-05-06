@@ -25,7 +25,7 @@ const Navbar = () => {
                     </form>
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <CustomLink to="/book" className="nav-link">Book</CustomLink>
+                            <CustomLink to="/news" className="nav-link">News</CustomLink>
                         </li>
                         <li className="nav-item">
                             <CustomLink to="/destination" className="nav-link">Destination</CustomLink>

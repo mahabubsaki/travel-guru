@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { GrFormNext, GrFormPrevious, GrFormNextLink } from 'react-icons/gr'
+import { useNavigate } from 'react-router-dom';
+import { InfoContext } from '../../App';
 
 const Home = () => {
-    const [count, setCount] = useState(0)
+    const { decrease, increase, count } = useContext(InfoContext)
+    const navigate = useNavigate()
     const destination = [{
         id: '1',
         name: "COX'S BAZAR",
@@ -24,21 +27,8 @@ const Home = () => {
         description: "Sajek Tripuri Valley is one of the most popular tourist spots in Bangladesh situated among the hills of the Kasalong range of mountains in Sajek union, Baghaichhari Upazila in Rangamati District.The valley is 2,000 feet above sea level.Sajek Tripuri Valley is known as the Queen of Hills & Roof of Rangamati.Sajek is a union located in the north of Chittagong Hill Tracts. It's under Baghaichori Upazila in Rangamati hill district.",
         img: "https://i.ibb.co/5hf8LYs/Sajek.png"
     }]
-    const decrease = () => {
-        if (count === 0) {
-            setCount(3)
-        }
-        else {
-            setCount(count - 1)
-        }
-    }
-    const increase = () => {
-        if (count === 3) {
-            setCount(0)
-        }
-        else {
-            setCount(count + 1)
-        }
+    const bookBtn = () => {
+        navigate(`book/${count + 1}`)
     }
     return (
         <div className="home">
@@ -46,7 +36,7 @@ const Home = () => {
                 <div className="info text-white mb-2 mb-md-0">
                     <h1 style={{ fontSize: "32px", fontWeight: "bold" }}>{destination[count].name}</h1>
                     <p>{destination[count].description.slice(0, 150) + "..."}</p>
-                    <button className="btn btn-warning" style={{ fontSize: '20px' }}>Book Now
+                    <button className="btn btn-warning" style={{ fontSize: '20px' }} onClick={bookBtn}>Book Now
                         <GrFormNextLink className="ms-2"></GrFormNextLink></button>
                 </div>
                 <div className="img mt-2 mt-md-0">
