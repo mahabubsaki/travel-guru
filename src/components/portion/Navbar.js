@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CustomLink from '../utilities/CustomLink';
 
 const Navbar = () => {
     const handleSearch = (e) => {
@@ -16,25 +17,28 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form className="d-flex ms-0 mt-2 ms-md-4 mt-md-0" onSubmit={handleSearch}>
+                    <form className="d-flex ms-auto mt-2 mt-md-0" onSubmit={handleSearch}>
                         <input className="form-control me-2" type="search" placeholder="Search your Destination" aria-label="Search" />
                         <button className="btn btn-outline-success" type="submit">Search</button>
                     </form>
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Book</a>
+                            <CustomLink to="/book" className="nav-link">Book</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Destination</a>
+                            <CustomLink to="/destination" className="nav-link">Destination</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Blogs</a>
+                            <CustomLink to="/blogs" className="nav-link">Blogs</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Contact</a>
+                            <CustomLink to="/contact" className="nav-link">Contact</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Login</a>
+                            <button className="btn btn-warning p-2">Login</button>
+                        </li>
+                        <li className="nav-item">
+                            <button className="btn btn-info p-2 ms-0 ms-md-2 mt-2 mt-md-0">Register</button>
                         </li>
                     </ul>
                 </div>
