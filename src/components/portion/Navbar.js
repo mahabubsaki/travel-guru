@@ -28,9 +28,6 @@ const Navbar = () => {
                             <CustomLink to="/news" className="nav-link">News</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <CustomLink to="/destination" className="nav-link">Destination</CustomLink>
-                        </li>
-                        <li className="nav-item">
                             <CustomLink to="/blogs" className="nav-link">Blogs</CustomLink>
                         </li>
                         <li className="nav-item">

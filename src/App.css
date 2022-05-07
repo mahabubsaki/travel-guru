@@ -37,3 +37,8 @@
   background-color: rgb(215, 219, 223);
   border-radius: 5px;
 }
+.input-map {
+  width: 100%;
+  min-height: 100vh;
+  z-index: -2;
+}
