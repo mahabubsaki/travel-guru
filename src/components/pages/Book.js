@@ -34,6 +34,12 @@ const Book = () => {
     const { name, description } = place
     const handleBooking = (e) => {
         e.preventDefault()
+        const origin = e.target.origin.value
+        const from = e.target.from.value
+        const to = e.target.to.value
+        const current = new Date().toLocaleDateString().split('/').slice(0, 1)
+        console.log(current);
+
     }
     if (!place) {
         return <NotFound></NotFound>
@@ -49,17 +55,17 @@ const Book = () => {
                     <div className="w-75 bg-light p-4 mx-auto rounded-3">
                         <form onSubmit={handleBooking}>
                             <label htmlFor="origin" className="mb-1 book-label">Origin</label>
-                            <input type="text" name="" id="origin" className="w-100 book-input" />
+                            <input type="text" name="origin" id="origin" className="w-100 book-input" required />
                             <label htmlFor="origin" className="mb-1 book-label">Destination</label>
                             <input type="text" name="destination" id="origin" className="w-100 book-input" value={name ? name : ""} readOnly={true} disabled />
                             <div className="d-flex my-2">
                                 <div className='w-50 me-2'>
-                                    <label htmlFor="for" className="book-label">For</label>
-                                    <input type="date" name="" id="from" className="w-100 book-input" />
+                                    <label htmlFor="for" className="book-label">From</label>
+                                    <input type="date" name="from" id="from" className="w-100 book-input" required />
                                 </div>
                                 <div className='w-50 ms-2'>
                                     <label htmlFor="to" className="book-label">To</label>
-                                    <input type="date" name="" id="to" className="w-100 book-input" />
+                                    <input type="date" name="to" id="to" className="w-100 book-input" required />
                                 </div>
                             </div>
                             <button className="w-100 mt-2 btn btn-warning" type="submit">Start Booking</button>
