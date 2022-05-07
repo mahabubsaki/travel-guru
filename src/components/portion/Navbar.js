@@ -10,7 +10,7 @@ const Navbar = () => {
         //disabling form default behavior and reseting the input
     }
     return (
-        <nav className="navbar navbar-expand-md navbar-light bg-light" style={{ position: "fixed", top: "0", left: "0", right: "0", zIndex: '1' }}>
+        <nav className="navbar navbar-expand-md navbar-light bg-light" style={{ position: "fixed", top: "0", left: "0", right: "0", zIndex: '2' }}>
             <div className="container-fluid">
                 <Link to="/">
                     <img src="https://i.ibb.co/ZxSdMdr/logo.png" alt="" width='100px' />

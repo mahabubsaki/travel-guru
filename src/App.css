@@ -40,5 +40,6 @@
 .input-map {
   width: 100%;
   min-height: 100vh;
-  z-index: -2;
+  border-radius: 20px;
+  z-index: 1;
 }

@@ -38,19 +38,21 @@ const Destination = () => {
         return <NotFound></NotFound>
     }
     return (
-        <div className="container" style={{ minHeight: "550px" }}>
+        <div className="container">
             <hr style={{ marginTop: "75px" }}></hr>
             <div className="d-flex align-items-center flex-column-reverse flex-md-row">
                 <div className="w-100 w-md-50">
                     <h2 className="fw-bolder">Stay In {name}</h2>
                 </div>
                 <div className="w-100 w-md-50">
-                    <MapContainer className='input-map' center={[51.505, -0.09]} zoom={13}>
+                    <MapContainer className='input-map' center={[22.184758676550782, 89.12548560280793]} zoom={14}>
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                         />
-                        <Marker position={[51.505, -0.09]} />
+                        <Marker position={[22.18538076548666, 89.12539342145307]} title="1" />
+                        <Marker position={[22.19999029773651, 89.11526917787607]} title="2" />
+                        <Marker position={[22.19080990783686, 89.130253977755]} title="3" />
                     </MapContainer>
                 </div>
             </div>
