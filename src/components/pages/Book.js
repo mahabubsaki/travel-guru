@@ -35,10 +35,24 @@ const Book = () => {
     const handleBooking = (e) => {
         e.preventDefault()
         const origin = e.target.origin.value
-        const from = e.target.from.value
-        const to = e.target.to.value
-        const current = new Date().toLocaleDateString().split('/').slice(0, 1)
-        console.log(current);
+        const from = new Date(e.target.from.value).getTime()
+        const to = new Date(e.target.to.value).getTime()
+        const current = new Date().getTime()
+        if (from < current) {
+            window.alert('Invalid Booking date')
+            return
+        }
+        if (to - from < 172800000) {
+            window.alert('You need to set booking day at least 3 days')
+            return
+        }
+        if (to - from > 518400000) {
+            window.alert('You cannot set booking more than 7 days')
+            return
+        }
+        else {
+            console.log(true)
+        }
 
     }
     if (!place) {
