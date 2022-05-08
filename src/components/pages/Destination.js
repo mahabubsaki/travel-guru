@@ -18,7 +18,8 @@ const Destination = () => {
         id: '3',
         name: "Sundarabans",
         description: "Sundarbans is a mangrove area in the delta formed by the confluence of the Padma, Brahmaputra and Meghna Rivers in the Bay of Bengal. It spans the area from the Baleswar River in Bangladesh's division of Khulna to the Hooghly River in India's state of West Bengal. It comprises closed and open mangrove forests, land used for agricultural purpose, mudflats and barren land, and is intersected by multiple tidal streams and channels.",
-        img: "https://i.ibb.co/xXpQgzM/sundorbon.png"
+        img: "https://i.ibb.co/xXpQgzM/sundorbon.png",
+        center: [22.184758676550782, 89.12548560280793],
     }, {
         id: '4',
         name: "Sajek Valley",
