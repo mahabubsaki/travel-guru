@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import { useNavigate, useParams } from 'react-router-dom';
+import Map from '../portion/Map';
 import NotFound from './NotFound';
 
 const Destination = () => {
@@ -20,6 +20,13 @@ const Destination = () => {
         description: "Sundarbans is a mangrove area in the delta formed by the confluence of the Padma, Brahmaputra and Meghna Rivers in the Bay of Bengal. It spans the area from the Baleswar River in Bangladesh's division of Khulna to the Hooghly River in India's state of West Bengal. It comprises closed and open mangrove forests, land used for agricultural purpose, mudflats and barren land, and is intersected by multiple tidal streams and channels.",
         img: "https://i.ibb.co/xXpQgzM/sundorbon.png",
         center: [22.184758676550782, 89.12548560280793],
+        title1: "Jumeirah Hotel",
+        marker1: [22.18538076548666, 89.12539342145307],
+        title2: "Emirates Grand Hotel",
+        marker2: [22.19999029773651, 89.11526917787607],
+        title3: "Taj Exotica Resort & Spa",
+        marker3: [22.19080990783686, 89.130253977755],
+
     }, {
         id: '4',
         name: "Sajek Valley",
@@ -46,15 +53,7 @@ const Destination = () => {
                     <h2 className="fw-bolder">Stay In {name}</h2>
                 </div>
                 <div className="w-100 w-md-50">
-                    <MapContainer className='input-map' center={[22.184758676550782, 89.12548560280793]} zoom={14}>
-                        <TileLayer
-                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-                        />
-                        <Marker position={[22.18538076548666, 89.12539342145307]} title="1" />
-                        <Marker position={[22.19999029773651, 89.11526917787607]} title="2" />
-                        <Marker position={[22.19080990783686, 89.130253977755]} title="3" />
-                    </MapContainer>
+                    <Map place={place}></Map>
                 </div>
             </div>
         </div>
