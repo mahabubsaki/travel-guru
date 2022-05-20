@@ -13,6 +13,9 @@
   min-height: 100vh;
   padding-top: 60px;
 }
+.img img {
+  cursor: pointer;
+}
 @media only screen and (max-width: 768px) {
   .info,
   .img {

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { InfoContext } from '../../App';
 
 const Home = () => {
-    const { decrease, increase, count } = useContext(InfoContext)
+    const { decrease, increase, count, setCount } = useContext(InfoContext)
     const navigate = useNavigate()
     const destination = [{
         id: '1',
@@ -41,10 +41,10 @@ const Home = () => {
                 </div>
                 <div className="img mt-2 mt-md-0">
                     <div className="d-flex">
-                        <img src={destination[0].img} alt="" className={`w-100 ${count === 0 ? 'border border-2 border-warning' : ''}`} style={{ borderRadius: '10px' }} />
-                        <img src="https://i.ibb.co/7VhCHhQ/Sreemongol.png" alt="" className={`w-100 mx-3 ${count === 1 ? 'border border-2 border-warning' : ''}`} style={{ borderRadius: '10px' }} />
-                        <img src="https://i.ibb.co/xXpQgzM/sundorbon.png" alt="" className={`w-100 me-3 ${count === 2 ? 'border border-2 border-warning' : ''}`} style={{ borderRadius: '10px' }} />
-                        <img src="https://i.ibb.co/5hf8LYs/Sajek.png" alt="" className={`w-100 ${count === 3 ? 'border border-2 border-warning' : ''}`} style={{ borderRadius: '10px' }} />
+                        <img src={destination[0].img} alt="" className={`w-100 ${count === 0 ? 'border border-2 border-warning' : ''}`} style={{ borderRadius: '10px' }} onClick={() => setCount(0)} />
+                        <img src="https://i.ibb.co/7VhCHhQ/Sreemongol.png" alt="" className={`w-100 mx-3 ${count === 1 ? 'border border-2 border-warning' : ''}`} style={{ borderRadius: '10px' }} onClick={() => setCount(1)} />
+                        <img src="https://i.ibb.co/xXpQgzM/sundorbon.png" alt="" className={`w-100 me-3 ${count === 2 ? 'border border-2 border-warning' : ''}`} style={{ borderRadius: '10px' }} onClick={() => setCount(2)} />
+                        <img src="https://i.ibb.co/5hf8LYs/Sajek.png" alt="" className={`w-100 ${count === 3 ? 'border border-2 border-warning' : ''}`} style={{ borderRadius: '10px' }} onClick={() => setCount(3)} />
                     </div>
                     <div className="d-flex justify-content-center mt-2">
                         <div>
